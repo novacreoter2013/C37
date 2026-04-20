@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Lumina Gold</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #0a0a0a;
+            --dark-gray: #151515;
+            --white: #ffffff;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li { margin-left: 25px; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .about-text h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: var(--dark-gray);
+            border-bottom: 3px solid var(--gold);
+            flex: 1;
+        }
+
+        .stat-box h3 {
+            color: var(--gold);
+            font-size: 1.8rem;
+        }
+
+        .stat-box span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        @media (max-width: 768px) {
+            .about-container { grid-template-columns: 1fr; text-align: center; }
+            .stats { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="project.html" class="logo">Lumina Gold</a>
+        <ul class="nav-links">
+            <li><a href="project.html">Home</a></li>
+            <li><a href="about1.html" style="color: var(--gold);">About</a></li>
+            <li><a href="project.html#menu">Menu</a></li>
+            <li><a href="project.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about-container">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80" alt="Our Chef">
+        </div>
+
+        <div class="about-text">
+            <h1>Our Culinary Legacy</h1>
+            <p>Founded in 1998, Lumina Gold started with a simple vision: to elevate dining into an art form. We believe that every meal should be a celebration of luxury and precision.</p>
+            <p>Our ingredients are sourced globally, from the finest truffles in Italy to the freshest seafood from the Pacific, all prepared by our Michelin-starred culinary team.</p>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>25+</h3>
+                    <span>Years Experience</span>
+                </div>
+                <div class="stat-box">
+                    <h3>12</h3>
+                    <span>Global Awards</span>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <span>Organic Sourced</span>
+                </div>
+            </div>
+
+            <a href="project.html" class="back-home">Explore Our Menu</a>
+        </div>
+    </section>
+
+</body>
+</html>

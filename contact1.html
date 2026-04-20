@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Lumina Gold</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #0a0a0a;
+            --dark-gray: #151515;
+            --white: #ffffff;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li { margin-left: 25px; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--dark-gray);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--gold);
+        }
+
+        .contact-info h2 {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-right: 20px;
+            width: 30px;
+        }
+
+        .info-item p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--gold);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-form {
+            background: #111;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--black);
+            border: 1px solid #333;
+            color: white;
+            border-radius: 8px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, var(--gold), #f9e29d);
+            color: var(--black);
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        @media (max-width: 900px) {
+            .contact-wrapper { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="project.html" class="logo">Lumina Gold</a>
+        <ul class="nav-links">
+            <li><a href="project.html">Home</a></li>
+            <li><a href="about1.html">About</a></li>
+            <li><a href="project.html">Menu</a></li>
+            <li><a href="contact1.html" style="color: var(--gold);">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <h2>VIP Concierge</h2>
+            <p style="margin-bottom: 30px; color: #888;">Connect with us for private events or table reservations.</p>
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>EMAIL US</strong>
+                    <p>singh.darshil2013@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <strong>CALL US</strong>
+                    <p>+91 98110 *** ***</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>VISIT US</strong>
+                    <p>Sector 9, Dwarka, New Delhi</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label>YOUR NAME</label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <input type="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE</label>
+                    <textarea rows="5" placeholder="How can we assist you?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.querySelector('#contact-form input[type="text"]').value;
+            alert(`Thank you, ${name}. Your message has been sent to the Lumina Gold team!  (This is a demo alert, no actual message is sent.)`);
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

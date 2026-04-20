@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Gold | Premium Dining</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f9e29d;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif, 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li { margin: 0 20px; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 4rem; color: var(--gold); margin-bottom: 10px; }
+
+        #menu { padding: 80px 8%; text-align: center; }
+        
+        .section-title {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: var(--dark-gray);
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 15px;
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .menu-card:hover { 
+            border-color: var(--gold); 
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .menu-card h3 { color: var(--white); font-size: 1.2rem; margin-bottom: 5px; }
+
+        .price { color: var(--gold); font-size: 1.4rem; font-weight: bold; margin: 10px 0; }
+
+        .order-btn {
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .order-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .checkout-box {
+            background: var(--black);
+            border: 2px solid var(--gold);
+            padding: 40px;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 20px;
+        }
+
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; color: var(--gold); margin-bottom: 5px; font-size: 0.8rem; }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: #111;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .pay-btn {
+            background: var(--gold);
+            width: 100%;
+            padding: 15px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Lumina Gold</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about1.html">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="gallery1.html">Gallery</a></li>
+            <li><a href="contact1.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Golden Flavors</h1>
+        <p>Experience the Pinnacle of Culinary Art</p>
+    </section>
+
+    <section id="menu">
+        <h2 class="section-title">Premium Menu</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" alt="Salad">
+                <h3>Golden Harvest Salad</h3>
+                <p class="price">$24.00</p>
+                <button class="order-btn" onclick="openCheckout('Golden Harvest Salad', 24)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=500&q=80" alt="Pancakes">
+                <h3>Royal Honey Pancakes</h3>
+                <p class="price">$18.00</p>
+                <button class="order-btn" onclick="openCheckout('Royal Honey Pancakes', 18)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" alt="Steak">
+                <h3>Prime Gold Ribeye</h3>
+                <p class="price">$85.00</p>
+                <button class="order-btn" onclick="openCheckout('Prime Gold Ribeye', 85)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=500&q=80" alt="Gold Wings">
+                <h3>24K Golden Wings</h3>
+                <p class="price">$32.00</p>
+                <button class="order-btn" onclick="openCheckout('24K Golden Wings', 32)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" alt="Truffle Fries">
+                <h3>Truffle Parmesan Fries</h3>
+                <p class="price">$15.00</p>
+                <button class="order-btn" onclick="openCheckout('Truffle Parmesan Fries', 15)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://img.freepik.com/free-photo/closeup-crispy-golden-fried-calamari-rings-with-tomato-sauce-lime-wedge-black-plate_9975-124489.jpg?semt=ais_hybrid&w=740&q=80" alt="Calamari">
+                <h3>Crispy Silk Calamari</h3>
+                <p class="price">$22.00</p>
+                <button class="order-btn" onclick="openCheckout('Crispy Silk Calamari', 22)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=80" alt="Salmon">
+                <h3>Atlantic Gold Salmon</h3>
+                <p class="price">$45.00</p>
+                <button class="order-btn" onclick="openCheckout('Atlantic Gold Salmon', 45)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_l2ymM4GmsUUCa8sJ8xkdJ4vZll8BUELj3A&s" alt="Risotto">
+                <h3>Saffron Dream Risotto</h3>
+                <p class="price">$38.00</p>
+                <button class="order-btn" onclick="openCheckout('Saffron Dream Risotto', 38)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=500&q=80" alt="Pasta">
+                <h3>Lobster Linguine</h3>
+                <p class="price">$52.00</p>
+                <button class="order-btn" onclick="openCheckout('Lobster Linguine', 52)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&w=500&q=80" alt="Burger">
+                <h3>The Wagyu Empire Burger</h3>
+                <p class="price">$29.00</p>
+                <button class="order-btn" onclick="openCheckout('The Wagyu Empire Burger', 29)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500&q=80" alt="Chicken">
+                <h3>Roasted Velvet Chicken</h3>
+                <p class="price">$34.00</p>
+                <button class="order-btn" onclick="openCheckout('Roasted Velvet Chicken', 34)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lamb">
+                <h3>Braised Lamb Shanks</h3>
+                <p class="price">$48.00</p>
+                <button class="order-btn" onclick="openCheckout('Braised Lamb Shanks', 48)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=500&q=80" alt="Pasta">
+                <h3>Black Truffle Ravioli</h3>
+                <p class="price">$42.00</p>
+                <button class="order-btn" onclick="openCheckout('Black Truffle Ravioli', 42)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80" alt="Sushi">
+                <h3>Golden Dragon Roll</h3>
+                <p class="price">$26.00</p>
+                <button class="order-btn" onclick="openCheckout('Golden Dragon Roll', 26)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&w=500&q=80" alt="Scallops">
+                <h3>Seared Scallop Medley</h3>
+                <p class="price">$40.00</p>
+                <button class="order-btn" onclick="openCheckout('Seared Scallop Medley', 40)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=500&q=80" alt="Kebab">
+                <h3>Imperial Persian Kebab</h3>
+                <p class="price">$36.00</p>
+                <button class="order-btn" onclick="openCheckout('Imperial Persian Kebab', 36)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80" alt="Ice Cream">
+                <h3>Midnight Vanilla Cloud</h3>
+                <p class="price">$14.00</p>
+                <button class="order-btn" onclick="openCheckout('Midnight Vanilla Cloud', 14)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Chocolate">
+                <h3>Molten Gold Lava Cake</h3>
+                <p class="price">$16.00</p>
+                <button class="order-btn" onclick="openCheckout('Molten Gold Lava Cake', 16)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80" alt="Donuts">
+                <h3>Glazed Royale Donuts</h3>
+                <p class="price">$12.00</p>
+                <button class="order-btn" onclick="openCheckout('Glazed Royale Donuts', 12)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cake">
+                <h3>Velvet Opera Cake</h3>
+                <p class="price">$18.00</p>
+                <button class="order-btn" onclick="openCheckout('Velvet Opera Cake', 18)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=500&q=80" alt="Cocktail">
+                <h3>The Gilded Martini</h3>
+                <p class="price">$20.00</p>
+                <button class="order-btn" onclick="openCheckout('The Gilded Martini', 20)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80" alt="Juice">
+                <h3>Golden Sunrise Nectar</h3>
+                <p class="price">$12.00</p>
+                <button class="order-btn" onclick="openCheckout('Golden Sunrise Nectar', 12)">Order Now</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://img.freepik.com/premium-photo/luxury-golden-coffee-cup-elegant-saucer-with-gourmet-beverage-decorated-with-gold-leaf-highend_996993-12030.jpg" alt="Coffee">
+                <h3>Gold Leaf Espresso</h3>
+                <p class="price">$10.00</p>
+                <button class="order-btn" onclick="openCheckout('Gold Leaf Espresso', 10)">Order Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal" id="checkoutModal">
+        <div class="checkout-box">
+            <h2 style="color: var(--gold); margin-bottom: 20px;">Secure Checkout</h2>
+            <p id="item-details" style="margin-bottom: 20px; color: #888;"></p>
+            <form id="payment-form">
+                <div class="input-group">
+                    <label>CARDHOLDER</label>
+                    <input type="text" required>
+                </div>
+                <div class="input-group">
+                    <label>CARD NUMBER</label>
+                    <input type="text" placeholder="**** **** **** ****" required>
+                </div>
+                <button type="submit" class="pay-btn">Complete Payment</button>
+                <button type="button" onclick="closeCheckout()" style="background:transparent; color:white; border:none; margin-top:10px; cursor:pointer; width:100%;">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('checkoutModal');
+        const details = document.getElementById('item-details');
+
+        function openCheckout(name, price) {
+            modal.style.display = 'flex';
+            details.innerHTML = `You are ordering: <strong>${name}</strong><br>Total: <strong>$${price}.00</strong>`;
+        }
+
+        function closeCheckout() { modal.style.display = 'none'; }
+
+        document.getElementById('payment-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Success! Your gourmet order is being prepared.');
+            closeCheckout();
+        });
+    </script>
+</body>
+</html>
