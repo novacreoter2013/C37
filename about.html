@@ -61,7 +61,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 40px 8%;
-    background-color: #0a0a0a;
+    background-color: #146a8bda;
     color: #fff;
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 contact-form {
-    background-color: #111;
+    background-color: #0ac9cf;
     padding: 30px;
     border-radius: 10px;
     width: 100%;
@@ -112,7 +112,7 @@ contact-form {
     margin-bottom: 20px;
     border: 1px solid #333;
     border-radius: 5px;
-    background-color: #222;
+    background-color: #ffffff;
     color: #fff;
 }
 
@@ -239,6 +239,21 @@ if (myindex > x.length) { myindex = 1 }
 x[myindex-1].style.display = "block";
 setTimeout(carosel, 3000); 
 }
+
+
+
+
+
+  
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.querySelector('#contact-form input[type="text"]').value;
+            alert(`Thank you, ${name}. Your message has been sent to the CDS team!  (This is a demo alert, no actual message is sent.)`);
+            this.reset();
+        });
+
+
+
 
 </script>
 
