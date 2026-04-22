@@ -16,6 +16,7 @@ body {
     background-color: royalblue;
     color: white;
     padding: 10px 15px;
+    box-shadow: 10px 10px 10px orange;
 }
 
 .container :hover {
@@ -25,21 +26,13 @@ body {
 
 }
 
-@keyframes slidein {
-    from {
-        margin-left: 100%;
-        width: 300%;
-    }
-    to {
-        margin-left: 0%;
-        width: 100%;
-    }
-}
+
 
 .container1 {
     background-color: darkorange;
     color: white;
     padding: 10px 15px;
+    box-shadow:  10px 10px 10px royalblue;
 }
 
 .container1 :hover {
@@ -53,6 +46,7 @@ body {
     background-color: darkgreen;
     color: white;
     padding: 10px 15px;
+    box-shadow: 10px 10px 10px yellow;
 }
 
 .container2 :hover {
@@ -63,8 +57,75 @@ body {
 }
 
  
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 8%;
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+.contact-info {
+    max-width: 400px;
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-right: 15px;
+}
+
+.info-item p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+contact-form {
+    background-color: #111;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.fas fa-map-marker-alt {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-right: 15px;
+}
+
+.textbox {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
 
 
+.submit-btn {
+    background-color: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 </style>
 
@@ -82,10 +143,104 @@ body {
 </div><br> <br>
 <div class="container2">
 <p>OUR COMPANY IS SELLING SELF-DRIVING VEHICLES.</p>
-</div>
+</div> <br><br>
+<center>
+<section>
+<img  class="mycarosel" src="image.png" alt="ERROR!!!!!!" style="height: 500px;">
+<img  class="mycarosel" src="image1.png" alt="ERROR!!!!!!" style="height: 500px;">
+<img class="mycarosel" src="image2.png" alt="ERROR!!!!!!!" style="height: 500px;">
+<img class="mycarosel" src="image3.png" alt="ERROR!!!!!!" style="height: 500px;">
+<img class="mycarosel" src="image4.png" alt="ERROR!!!!!!" style="height: 500px;">
+<img class="mycarosel" src="image5.png" alt="ERROR!!!!!!" style="height: 500px;">
+<img class="mycarosel" src="image6.png" alt="ERROR!!!!!!" style="height: 500px;">
+<img class="mycarosel" src="image7.png" alt="ERROR!!!!!!" style="height: 500px;">
+<img class="mycarosel" src="image8.png" alt="ERROR!!!!!!" style="height: 500px">
+
+
+</section>
+</center>
+<br><br><br>
 
 
 
+
+ <div class="contact-wrapper">
+        <div class="contact-info">
+            <h2>VIP Concierge</h2>
+            <p style="margin-bottom: 30px; color: #888;">Connect with us for private car services or special requests.</p>
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>EMAIL US</strong>
+                    <p>singh.darshil2013@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <strong>CALL US</strong>
+                    <p>+91 98110 *** ***</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>VISIT US</strong>
+                    <p>Sector 9, Dwarka, New Delhi</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label>YOUR NAME</label>
+                    <input class="textbox" type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <input class="textbox" type="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE</label>
+                    <textarea class="textbox" rows="5" placeholder="How can we assist you?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<script>
+
+var myindex = 0;
+carosel();
+
+function carosel() {
+    var i;
+    var x = document.getElementsByClassName("mycarosel");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+
+
+myindex++;
+if (myindex > x.length) { myindex = 1 }
+x[myindex-1].style.display = "block";
+setTimeout(carosel, 3000); 
+}
+
+</script>
 
 
 
