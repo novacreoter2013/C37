@@ -4,11 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+<style>
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 8%;
+    background-color: #146a8bda;
+    color: #fff;
+}
+
+.contact-info {
+    max-width: 400px;
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-right: 15px;
+}
+
+.info-item p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+contact-form {
+    background-color: #0ac9cf;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.fas fa-map-marker-alt {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-right: 15px;
+}
+
+.textbox {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #fff;
+}
+
+
+.submit-btn {
+    background-color: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+    body {
+        margin: 0;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+.topnav {
+   
+overflow: hidden;
+background-color: #333;
+   
+}
+
+.topnav a {
+float: left;
+color: royalblue;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+
+.topnav a:hover {
+    background-color: darkorange;
+    color: rgb(255, 255, 255);
+}
+
+.topnav a.active {
+    background-color: khaki;
+    color: black;
+}
+
+
+</style>
+
+
 </head>
 <body>
 
-<h1></h1>
 
+<div class="topnav">
+<a class="active" href="#">Home</a>
+<a href="about.html">About Us</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact Us</a>
+</div>
+
+
+
+ <div class="contact-wrapper">
+        <div class="contact-info">
+            <h2>VIP Concierge</h2>
+            <p style="margin-bottom: 30px; color: #888;">Connect with us for private car services or special requests.</p>
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>EMAIL US</strong>
+                    <p>singh.darshil2013@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <strong>CALL US</strong>
+                    <p>+91 98110 *** ***</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>VISIT US</strong>
+                    <p>Sector 9, Dwarka, New Delhi</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label>YOUR NAME</label>
+                    <input class="textbox" type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL ADDRESS</label>
+                    <input class="textbox" type="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE</label>
+                    <textarea class="textbox" rows="5" placeholder="How can we assist you?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
 
 
 
