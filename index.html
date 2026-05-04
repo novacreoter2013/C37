@@ -4,29 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  <link rel="stylesheet" href=
-
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-<script src=
-
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
-
-</script>
-
+    <title>Transport Services | Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <style>
         body {
             margin: 0;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-family: Impact, sans-serif;
+            background-color: #fdfdfd;
         }
 
         .topnav {
-
             overflow: hidden;
             background-color: #333;
-
         }
 
         .topnav a {
@@ -38,10 +31,9 @@
             font-size: 17px;
         }
 
-
         .topnav a:hover {
             background-color: darkorange;
-            color: rgb(255, 255, 255);
+            color: white;
         }
 
         .topnav a.active {
@@ -49,121 +41,200 @@
             color: black;
         }
 
-        .container3 {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-
         .btn {
             background-color: transparent;
             border: 1px solid #d4af37;
             color: #d4af37;
             padding: 12px 30px;
             border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            gap: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d4af37;
+            color: white;
+        }
+
+        .modal-header {
+            background-color: #333;
+            color: darkorange;
+            font-family: Impact;
+        }
+
+        .modal-body label {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .section-title {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+            text-align: center;
         }
     </style>
-
-
-
 </head>
 
 <body>
 
-    <div class=" topnav">
+    <div class="topnav">
         <a class="active" href="#">Home</a>
         <a href="about.html">About Us</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact Us</a>
     </div>
 
-
     <center>
-        <h1>Welcome To Transport Services</h1>
+        <h1 style="margin-top: 30px;">Welcome To Transport Services</h1>
     </center>
 
-
-
     <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <img src="image6.png" alt="error" height="200px">
-                <br>
-                <button class="btn"> Book Now </button>
-                <button class="btn">Test Drive</button>
-                <br><br>
+        <div class="row text-center">
+            <div class="col-6 mb-4">
+                <img src="image6.png" alt="Vehicle" height="200px"><br>
+                <button class="btn" data-toggle="modal" data-target="#bookingModal"> Book Now </button>
+                <button class="btn" data-toggle="modal" data-target="#bookingModal">Test Drive</button>
             </div>
-
-            <div class="col-6">
-                <img src="image2.png" alt="error" height="200px">
-                <br>
-                <button class="btn"> Book Now </button>
-                <button class="btn">Test Drive</button>
-                <br><br>
+            <div class="col-6 mb-4">
+                <img src="image2.png" alt="Vehicle" height="200px"><br>
+                <button class="btn" data-toggle="modal" data-target="#bookingModal"> Book Now </button>
+                <button class="btn" data-toggle="modal" data-target="#bookingModal">Test Drive</button>
             </div>
         </div>
-
-<br>
-        <div class="row">
-            <div class="col-6">
-                <img src="image7.png" alt="error" height="200px">
-                <br>
-                <button class="btn"> Book Now </button>
-                <button class="btn">Test Drive</button>
-                <br><br>
+        <div class="row text-center">
+            <div class="col-6 mb-4">
+                <img src="image7.png" alt="Vehicle" height="200px"><br>
+                <button class="btn" data-toggle="modal" data-target="#bookingModal"> Book Now </button>
+                <button class="btn" data-toggle="modal" data-target="#bookingModal">Test Drive</button>
             </div>
-
-            <div class="col-6">
-                <img src="image9.png" alt="error" height="200px">
-                <br>
-                <button class="btn"> Book Now </button>
-                <button class="btn">Test Drive</button>
-                <br><br>
+            <div class="col-6 mb-4">
+                <img src="image9.png" alt="Vehicle" height="200px"><br>
+                <button class="btn" data-toggle="modal" data-target="#bookingModal"> Book Now </button>
+                <button class="btn" data-toggle="modal" data-target="#bookingModal">Test Drive</button>
             </div>
         </div>
-
-<br>
+    </div>
+    <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter Your Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <form id="detailsForm">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="userName" class="form-control" placeholder="Enter name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="userEmail" class="form-control" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="userPhone" class="form-control" placeholder="Enter phone" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            style="color: #333; border-color: #333;">Cancel</button>
+                        <button type="submit" class="btn btn-warning"
+                            style="background-color: darkorange; color: white; border: none;">Submit Details</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-center section-title">Our Special Services</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>24/7 Support</h3>
+                    <p style="font-family: Arial;">We are available anytime to help you with your transport needs.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Fast Delivery</h3>
+                    <p style="font-family: Arial;">Get your vehicles delivered to your doorstep in record time.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Safe Journey</h3>
+                    <p style="font-family: Arial;">Verified drivers and GPS tracked vehicles for your safety.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-light mt-5 p-4 rounded">
+        <h2 class="text-center section-title">What Our Clients Say</h2>
         <div class="row">
-            <div class="col-6">
-                <img src="image5.png" alt="error" height="200px">
-                <br>
-                <button class="btn"> Book Now </button>
-                <button class="btn">Test Drive</button>
-                <br><br>
+            <div class="col-md-6">
+                <blockquote class="blockquote">
+                    <p style="font-family: Arial;">"The best car rental experience I've ever had! Highly recommended."
+                    </p>
+                    <footer class="blockquote-footer">John Doe</footer>
+                </blockquote>
             </div>
-
-            <div class="col-6">
-                <img src="image4.png" alt="error" height="200px">
-                <br>
-                <button class="btn"> Book Now </button>
-                <button class="btn">Test Drive</button>
-                <br><br>
+            <div class="col-md-6">
+                <blockquote class="blockquote">
+                    <p style="font-family: Arial;">"Amazing fleet and very professional staff. 5 stars!"</p>
+                    <footer class="blockquote-footer">Darshil Singh</footer>
+                </blockquote>
             </div>
-
-
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <p style="font-family: Arial;">Providing top-notch transport services since 2010.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <p style="font-family: Arial;">
+                        Home | About | Gallery | Contact
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact</h4>
+                    <p style="font-family: Arial;">Email: info@transport.com<br>Phone: +123 456 789</p>
+                </div>
+            </div>
+            <hr style="background-color: #555;">
+            <p>&copy; 2024 Transport Services Inc.</p>
         </div>
     </div>
 
-
-
     <script>
-        const buttons = document.querySelectorAll('.btn');
+        document.getElementById('detailsForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                alert('Thank you for showing interest! We will contact you soon.');
-            });
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const phone = document.getElementById('userPhone').value;
+
+            $('#bookingModal').modal('hide');
+
+            alert(
+                `Thank you, ${name}!\n\nWe have received your request.\nEmail: ${email}\nPhone: ${phone}\n\nOur team will contact you shortly!`);
+
+            this.reset();
         });
     </script>
-
-
-
-
-
 
 </body>
 
