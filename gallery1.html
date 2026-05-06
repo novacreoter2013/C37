@@ -26,6 +26,21 @@
             color: var(--white);
         }
 
+
+.logo {
+            display: flex;
+            height: 30px;
+        }
+
+
+ .logo-group {
+            display: flex;
+            height: 80px;
+        }
+
+
+
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -39,12 +54,14 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
+            display: flex;
+            height: 30px;
+        }
+
+
+ .logo-group {
+            display: flex;
+            height: 80px;
         }
 
         .nav-links {
@@ -155,7 +172,9 @@
 <body>
 
     <nav>
-        <a href="project.html" class="logo">Lumina Gold</a>
+        <div class="logo-group">
+            <img id="logoImg" src="image-removebg-preview.png" alt="Media Grabber" class="main-logo">
+        </div>
         <ul class="nav-links">
             <li><a href="project.html">Home</a></li>
             <li><a href="about1.html">About</a></li>

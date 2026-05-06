@@ -44,12 +44,16 @@
         }
 
         .logo {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            display: flex;
+            height: 30px;
         }
+
+
+ .logo-group {
+            display: flex;
+            height: 80px;
+        }
+
 
         .nav-links {
             display: flex;
@@ -264,7 +268,9 @@
 <body>
 
     <nav>
-        <div class="logo">Lumina Gold</div>
+        <div class="logo-group">
+        <img id="logoImg" src="image-removebg-preview1.png" alt="Media Grabber" class="main-logo">
+    </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="about1.html">About</a></li>
